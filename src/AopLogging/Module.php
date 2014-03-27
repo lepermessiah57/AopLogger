@@ -1,6 +1,6 @@
 <?php
-namespace AopLogging;
 
+namespace AopLogging;
 
 use Zend\Mvc\MvcEvent;
 
