@@ -28,7 +28,7 @@ class Module
         $config = $services->get('config');
 
         $applicationAspectKernel = \AopLogging\Kernel\ApplicationAspectKernel::getInstance();
-	$applicationAspectKernel->setServiceLocator($services);
+	    $applicationAspectKernel->setServiceLocator($services);
         $applicationAspectKernel->init(array(
             'debug' => $config['AopLoggingDebug'], // Use 'false' for production mode
             'cacheDir' => $config['AopLoggingCache'], // Adjust this path if needed
@@ -37,6 +37,16 @@ class Module
     }
     
     public function getServiceConfig() {
-        return array('invokables'=>array('DebugAspect'=>'AopLogging\Log\DebugAspect'));
+        return array(
+            'invokables' => array(
+                'DebugAspect'=>'AopLogging\Log\DebugAspect'
+            ),
+            'factories' => array(
+                'ErrorLog' => 'AopLogging\Factory\ErrorLogFactory'
+            ),
+            'initializers' => array(
+                'ErrorLogInitializer' => 'AopLogging\Initializer\ErrorLogInitializer'
+            )
+        );
     }
 }
