@@ -34,4 +34,8 @@ class Module
             'includePaths' => $config['AopLoggingWhiteList']
         ));
     }
+    
+    public function getServiceConfig() {
+        return array('invokables'=>array('DebugAspect'=>'AopLogging\Log\DebugAspect'));
+    }
 }

@@ -2,5 +2,6 @@
 return array(
     'AopLoggingDebug' => false,
     'AopLoggingCache' => null,
-    'AopLoggingWhiteList' => array()
+    'AopLoggingWhiteList' => array(),
+    'AopLoggingAspects' => array('DebugAspect')
 );
