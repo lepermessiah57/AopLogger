@@ -1,0 +1,22 @@
+{
+    "name": "vu/AopLogging",
+    "description": "Module for annotation logging via the GoAop framework",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "lisachenko/go-aop-php": "0.4.3"
+    },
+    "require-dev": {
+        "phake/phake": "2.0.*",
+        "phpunit/phpunit": "3.7.*",
+        "zendframework/zend-servicemanager": "2.2.*@dev",
+        "zendframework/zend-log" : "2.2.*@dev",
+        "zendframework/zend-mvc" : "2.2.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "AopLogging": "src/",
+            "AopLoggingTest" : "tests/"
+        }
+    }
+}
