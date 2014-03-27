@@ -28,6 +28,7 @@ class Module
         $config = $services->get('config');
 
         $applicationAspectKernel = \AopLogging\Kernel\ApplicationAspectKernel::getInstance();
+	$applicationAspectKernel->setServiceLocator($services);
         $applicationAspectKernel->init(array(
             'debug' => $config['AopLoggingDebug'], // Use 'false' for production mode
             'cacheDir' => $config['AopLoggingCache'], // Adjust this path if needed
