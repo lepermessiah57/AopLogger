@@ -6,6 +6,6 @@ use Doctrine\Common\Annotations\Annotation;
 /**
  * @Annotation
  */
-class DebugAnnotation extends Annotation{
+class DebugMethod extends Annotation{
 
 } 

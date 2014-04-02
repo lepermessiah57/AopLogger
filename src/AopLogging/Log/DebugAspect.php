@@ -18,7 +18,7 @@ class DebugAspect implements Aspect, LoggerAwareInterface{
     }
 
     /**
-     * @Pointcut("@annotation(AopLogging\Annotation\DebugAnnotation)")
+     * @Pointcut("@annotation(AopLogging\Annotation\DebugMethod)")
      */
     protected function loggablePointcut() {}
 
