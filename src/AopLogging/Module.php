@@ -26,13 +26,14 @@ class Module
         $application = $e->getApplication();
         $services = $application->getServiceManager();
         $config = $services->get('config');
+        $aopLogging = $config['AopLogging'];
 
         $applicationAspectKernel = \AopLogging\Kernel\ApplicationAspectKernel::getInstance();
 	    $applicationAspectKernel->setServiceLocator($services);
         $applicationAspectKernel->init(array(
-            'debug' => $config['AopLoggingDebug'], // Use 'false' for production mode
-            'cacheDir' => $config['AopLoggingCache'], // Adjust this path if needed
-            'includePaths' => $config['AopLoggingWhiteList']
+            'debug' => $aopLogging['Debug'], // Use 'false' for production mode
+            'cacheDir' => $aopLogging['Cache'], // Adjust this path if needed
+            'includePaths' => $aopLogging['WhiteList']
         ));
     }
     

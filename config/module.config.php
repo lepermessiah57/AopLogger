@@ -1,7 +1,9 @@
 <?php
 return array(
-    'AopLoggingDebug' => false,
-    'AopLoggingCache' => null,
-    'AopLoggingWhiteList' => array(),
-    'AopLoggingAspects' => array('DebugAspect')
+    'AopLogging' => array(
+    	'Debug' => false,
+    	'Cache' => null,
+    	'WhiteList' => array(),
+    	'Aspects' => array('DebugAspect')
+    )
 );

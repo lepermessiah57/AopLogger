@@ -33,7 +33,7 @@ class ApplicationAspectKernelTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testAddAspectsFromServiceLocatorWillAddASingleAspectFromTheServiceLocatorConfig(){
-        $config = array('AopLoggingAspects'=>array('aspect1'));
+        $config = array('AopLogging'=>array('Aspects'=>array('aspect1')));
         $this->serviceLocator->setService('config', $config);
         $aspect = Phake::mock('Go\Aop\Aspect');
         $this->serviceLocator->setService('aspect1', $aspect);
@@ -44,7 +44,7 @@ class ApplicationAspectKernelTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testAddAspectsFromServiceLocatorWillAddMultipleAspectsFromTheServiceLocatorConfig(){
-        $config = array('AopLoggingAspects'=>array('aspect1', 'aspect2'));
+        $config = array('AopLogging'=>array('Aspects'=>array('aspect1', 'aspect2')));
         $this->serviceLocator->setService('config', $config);
         $aspect = Phake::mock('Go\Aop\Aspect');
         $aspect2 = Phake::mock('Go\Aop\Aspect');
@@ -58,7 +58,8 @@ class ApplicationAspectKernelTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testAddAspectsFromServiceLocatorWillAddCustomAspectsAsWell(){
-        $config = array('AopLoggingAspects'=>array(), 'AopLoggingCustomAspects'=>array('customAspect'));
+        $config = array('AopLogging'=>array('Aspects'=>array(), 'CustomAspects'=>array('customAspect')));
+
         $this->serviceLocator->setService('config', $config);
         $aspect = Phake::mock('Go\Aop\Aspect');
         $this->serviceLocator->setService('customAspect', $aspect);
