@@ -43,7 +43,7 @@ class DebugAspectTest extends \PHPUnit_Framework_TestCase {
         $this->aspect->aroundLoggable($this->methodInvokation);
 
         $name = $this->methodInvokation->getMethod()->name;
-        Phake::verify($this->logger)->debug("Success: " . $name, $result);
+        Phake::verify($this->logger)->debug("Success: " . $name);
     }
 
     public function testAroundLoggableWillLogTheExceptionWhenThrown(){

@@ -31,7 +31,7 @@ class DebugAspect implements Aspect, LoggerAwareInterface{
         $this->logger->debug("Entering " . $method, $invocation->getArguments());
         try {
             $result = $invocation->proceed();
-            $this->logger->debug("Success: " . $method . " Result: " .  $result);
+            $this->logger->debug("Success: " . $method );
         } catch (\Exception $e) {
             $this->logger->debug("Error: " . $method . ' details: ' . $e);
             throw $e;
