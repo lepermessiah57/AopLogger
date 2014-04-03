@@ -11,7 +11,7 @@ class ErrorLogInitializer implements InitializerInterface{
 
     public function initialize($instance, ServiceLocatorInterface $serviceLocator) {
         if($instance instanceof LoggerAwareInterface){
-            $instance->setLogger($serviceLocator->get('ErrorLog'));
+            $instance->setLogger($serviceLocator->get('AopLoggerErrorLog'));
         }
     }
 }

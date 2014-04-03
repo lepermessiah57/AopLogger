@@ -43,10 +43,10 @@ class Module
                 'DebugAspect'=>'AopLogging\Log\DebugAspect'
             ),
             'factories' => array(
-                'ErrorLog' => 'AopLogging\Factory\ErrorLogFactory'
+                'AopLoggerErrorLog' => 'AopLogging\Factory\ErrorLogFactory'
             ),
             'initializers' => array(
-                'ErrorLogInitializer' => 'AopLogging\Initializer\ErrorLogInitializer'
+                'AopLoggerErrorLogInitializer' => 'AopLogging\Initializer\ErrorLogInitializer'
             )
         );
     }
