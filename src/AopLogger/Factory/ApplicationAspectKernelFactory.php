@@ -10,5 +10,6 @@ class ApplicationAspectKernelFactory implements FactoryInterface {
     public function createService(ServiceLocatorInterface $serviceLocator) {
 		$kernel = \AopLogger\Kernel\ApplicationAspectKernel::getInstance();
 		$kernel->setServiceLocator($serviceLocator);
+		return $kernel;
     }
 }
