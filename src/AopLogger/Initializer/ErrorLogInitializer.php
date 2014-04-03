@@ -3,11 +3,11 @@
 
 namespace AopLogger\Initializer;
 
-use Zend\Log\LoggerAwareInterface;
+use AopLogger\Log\ErrorLoggerAwareInterface;
 use Zend\ServiceManager\InitializerInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class ErrorLogInitializer implements InitializerInterface{
+class ErrorLogInitializer implements ErrorLoggerAwareInterface{
 
     public function initialize($instance, ServiceLocatorInterface $serviceLocator) {
         if($instance instanceof LoggerAwareInterface){

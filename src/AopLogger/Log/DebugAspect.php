@@ -3,13 +3,12 @@
 namespace AopLogger\Log;
 
 use Go\Aop\Aspect;
-use Zend\Log\LoggerAwareInterface;
 use Zend\Log\LoggerInterface;
 use Go\Aop\Intercept\MethodInvocation;
 use Go\Lang\Annotation\Around;
 use Go\Lang\Annotation\Pointcut;
 
-class DebugAspect implements Aspect, LoggerAwareInterface{
+class DebugAspect implements Aspect, ErrorLoggerAwareInterface{
 
     private $logger;
 
