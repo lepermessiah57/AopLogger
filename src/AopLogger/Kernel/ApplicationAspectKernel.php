@@ -24,7 +24,7 @@ class ApplicationAspectKernel extends AspectKernel implements ServiceLocatorAwar
     }
 
     public function addAllAspectsFromServiceLocator(AspectContainer $container){
-        $config = $this->serviceLocator->get('config');
+        $config = $this->getServiceLocator()->get('config');
         $aopLogging = $config['AopLogger'];
         $aspects = $aopLogging['Aspects'];
         if(array_key_exists('CustomAspects', $aopLogging)){
