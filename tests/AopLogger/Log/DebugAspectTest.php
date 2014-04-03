@@ -1,8 +1,8 @@
 <?php
 
-namespace AopLoggingTest\Log;
+namespace AopLoggerTest\Log;
 
-use AopLogging\Log\DebugAspect;
+use AopLogger\Log\DebugAspect;
 use \Phake;
 
 class DebugAspectTest extends \PHPUnit_Framework_TestCase {

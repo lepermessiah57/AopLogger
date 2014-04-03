@@ -1,6 +1,6 @@
 <phpunit bootstrap="bootstrap.php">
 
-    <testsuite name="AopLogging Test Suite">
+    <testsuite name="AopLogger Test Suite">
 
         <directory>./</directory>
 

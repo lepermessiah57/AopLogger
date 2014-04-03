@@ -1,6 +1,6 @@
 <?php
 
-namespace AopLogging\Kernel;
+namespace AopLogger\Kernel;
 
 use Go\Core\AspectKernel;
 use Go\Core\AspectContainer;

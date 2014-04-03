@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AopLogging\Initializer;
+namespace AopLogger\Initializer;
 
 use Zend\Log\LoggerAwareInterface;
 use Zend\ServiceManager\InitializerInterface;

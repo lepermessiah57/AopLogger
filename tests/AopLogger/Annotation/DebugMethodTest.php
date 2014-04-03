@@ -1,8 +1,8 @@
 <?php
 
-namespace AopLoggingTest\Annotation;
+namespace AopLoggerTest\Annotation;
 
-use AopLogging\Annotation\DebugMethod;
+use AopLogger\Annotation\DebugMethod;
 
 class DebugMethodTest extends \PHPUnit_Framework_TestCase {
 

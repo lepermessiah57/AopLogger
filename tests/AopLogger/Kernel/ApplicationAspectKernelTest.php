@@ -1,8 +1,8 @@
 <?php
 
-namespace AopLoggingTest\Kernel;
+namespace AopLoggerTest\Kernel;
 
-use AopLogging\Kernel\ApplicationAspectKernel;
+use AopLogger\Kernel\ApplicationAspectKernel;
 use Zend\ServiceManager\ServiceManager;
 use Phake;
 

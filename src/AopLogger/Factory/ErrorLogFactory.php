@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AopLogging\Factory;
+namespace AopLogger\Factory;
 
 
 use Zend\Log\Logger;

@@ -1,6 +1,6 @@
 <?php
 return array(
-    'AopLogging' => array(
+    'AopLogger' => array(
     	'Debug' => false,
     	'Cache' => null,
     	'WhiteList' => array(),

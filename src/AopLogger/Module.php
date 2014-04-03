@@ -1,6 +1,6 @@
 <?php
 
-namespace AopLogging;
+namespace AopLogger;
 
 use Zend\Mvc\MvcEvent;
 
@@ -26,9 +26,9 @@ class Module
         $application = $e->getApplication();
         $services = $application->getServiceManager();
         $config = $services->get('config');
-        $aopLogging = $config['AopLogging'];
+        $aopLogging = $config['AopLogger'];
 
-        $applicationAspectKernel = \AopLogging\Kernel\ApplicationAspectKernel::getInstance();
+        $applicationAspectKernel = \AopLogger\Kernel\ApplicationAspectKernel::getInstance();
 	    $applicationAspectKernel->setServiceLocator($services);
         $applicationAspectKernel->init(array(
             'debug' => $aopLogging['Debug'], // Use 'false' for production mode
@@ -40,13 +40,13 @@ class Module
     public function getServiceConfig() {
         return array(
             'invokables' => array(
-                'DebugAspect'=>'AopLogging\Log\DebugAspect'
+                'DebugAspect'=>'AopLogger\Log\DebugAspect'
             ),
             'factories' => array(
-                'AopLoggerErrorLog' => 'AopLogging\Factory\ErrorLogFactory'
+                'AopLoggerErrorLog' => 'AopLogger\Factory\ErrorLogFactory'
             ),
             'initializers' => array(
-                'AopLoggerErrorLogInitializer' => 'AopLogging\Initializer\ErrorLogInitializer'
+                'AopLoggerErrorLogInitializer' => 'AopLogger\Initializer\ErrorLogInitializer'
             )
         );
     }

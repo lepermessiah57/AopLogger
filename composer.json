@@ -1,5 +1,5 @@
 {
-    "name": "vu/AopLogging",
+    "name": "vu/AopLogger",
     "description": "Module for annotation logging via the GoAop framework",
     "minimum-stability": "dev",
     "require": {
@@ -15,8 +15,8 @@
     },
     "autoload": {
         "psr-0": {
-            "AopLogging": "src/",
-            "AopLoggingTest" : "tests/"
+            "AopLogger": "src/",
+            "AopLoggerTest" : "tests/"
         }
     }
 }

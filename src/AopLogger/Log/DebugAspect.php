@@ -1,6 +1,6 @@
 <?php
 
-namespace AopLogging\Log;
+namespace AopLogger\Log;
 
 use Go\Aop\Aspect;
 use Zend\Log\LoggerAwareInterface;
@@ -18,7 +18,7 @@ class DebugAspect implements Aspect, LoggerAwareInterface{
     }
 
     /**
-     * @Pointcut("@annotation(AopLogging\Annotation\DebugMethod)")
+     * @Pointcut("@annotation(AopLogger\Annotation\DebugMethod)")
      */
     protected function loggablePointcut() {}
 

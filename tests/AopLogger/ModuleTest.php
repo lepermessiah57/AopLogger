@@ -1,8 +1,8 @@
 <?php
 
-namespace AopLoggingTest;
+namespace AopLoggerTest;
 
-use AopLogging\Module;
+use AopLogger\Module;
 
 class ModuleTest extends \PHPUnit_Framework_TestCase {
 
