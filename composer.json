@@ -11,7 +11,8 @@
         "phpunit/phpunit": "3.7.*",
         "zendframework/zend-servicemanager": "2.2.*@dev",
         "zendframework/zend-log" : "2.2.*@dev",
-        "zendframework/zend-mvc" : "2.2.*@dev"
+        "zendframework/zend-mvc" : "2.2.*@dev",
+        "zendframework/zend-view" : "2.2.*@dev"
     },
     "autoload": {
         "psr-0": {

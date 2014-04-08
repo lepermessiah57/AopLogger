@@ -3,6 +3,8 @@
 namespace AopLoggerTest;
 
 use AopLogger\Module;
+use Zend\ServiceManager\ServiceManager;
+use Phake;
 
 class ModuleTest extends \PHPUnit_Framework_TestCase {
 
@@ -55,6 +57,28 @@ class ModuleTest extends \PHPUnit_Framework_TestCase {
         $serviceConfig = $this->module->getServiceConfig();
 
         $this->assertEquals($expected, $serviceConfig['initializers']['AopLoggerErrorLogInitializer']);
+    }
+
+    public function testOnBootstrapInitializeTheAopKernel(){
+    	$debug = false;
+    	$cache = null;
+    	$whitelist = null;
+    	$config = array('AopLogger' => array('Debug'=>$debug, 'Cache' => $cache, 'WhiteList' => $whitelist));
+
+    	$serviceManager = new ServiceManager();
+    	$serviceManager->setService('config', $config);
+    	$event = Phake::mock('Zend\Mvc\MvcEvent');
+    	$application = Phake::mock('Zend\Mvc\Application');
+    	Phake::when($event)->getApplication()->thenReturn($application);
+    	Phake::when($application)->getServiceManager()->thenReturn($serviceManager);
+    	$kernel = Phake::mock('AopLogger\Kernel\ApplicationAspectKernel');
+    	$serviceManager->setService('ApplicationAspectKernel', $kernel);
+
+    	$this->module->onBootstrap($event);
+
+    	Phake::verify($kernel)->init(array('debug'=>$debug, 'cacheDir'=>$cache, 'includePaths'=>$whitelist));
+
+
     }
 }
  
