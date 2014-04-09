@@ -1,0 +1,23 @@
+{
+    "name": "vu/AopLogger",
+    "description": "Module for annotation logging via the Go! Aop framework",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "lisachenko/go-aop-php": "0.4.3"
+    },
+    "require-dev": {
+        "phake/phake": "2.0.*",
+        "phpunit/phpunit": "3.7.*",
+        "zendframework/zend-servicemanager": ">=2.2.0",
+        "zendframework/zend-log" : ">=2.2.0",
+        "zendframework/zend-mvc" : ">=2.2.0",
+        "zendframework/zend-view" : ">=2.2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "AopLogger": "src/",
+            "AopLoggerTest" : "tests/"
+        }
+    }
+}

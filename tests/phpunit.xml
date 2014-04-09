@@ -1,0 +1,10 @@
+<phpunit bootstrap="bootstrap.php" colors="true">
+    <testsuite name="AopLogger Test Suite">
+        <directory>./</directory>
+    </testsuite>
+	<filter>
+	  <blacklist>
+	    <directory suffix=".php">../vendor</directory>
+	  </blacklist>
+	</filter>
+</phpunit>
