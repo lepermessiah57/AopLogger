@@ -21,6 +21,17 @@ AopLogger can be configured using the `AopLogger` key in your module configurati
  2. `Cache` -> defaulted to null, this can be pointed at a directory for caching the interwoven aspects rather than weaving at runtime
  3. `WhiteList` -> *REQUIRED* this should point to the source directory you wish to inject the aspects
  4. `CustomAspects` -> Any additional aspects you wish to add to the framework.  This will be a list of keys which will be loaded from the service locator
+### Example
+```php
+// config/autoload/global.php
+'AopLogger' => array(
+        'WhiteList' => array(__DIR__ . "/../../module/MyModule"),
+        'CustomAspects' => array(
+            'EchoAspect',
+            'MyControllerAspect'
+        )
+    )
+```
 
 ## Documentation
 
