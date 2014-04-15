@@ -10,6 +10,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class ApplicationAspectKernel extends AspectKernel implements ServiceLocatorAwareInterface{
 
 	private $serviceLocator;
+    protected static $initialized = false;
 
 	public function setServiceLocator(ServiceLocatorInterface $serviceLocator){
 		$this->serviceLocator = $serviceLocator;
@@ -33,5 +34,12 @@ class ApplicationAspectKernel extends AspectKernel implements ServiceLocatorAwar
         foreach($aspects as $aspect){
             $container->registerAspect($this->serviceLocator->get($aspect));
         }
+    }
+
+    public function init($config = array()){
+        if(!ApplicationAspectKernel::$initialized){
+            parent::init($config);
+        }
+        ApplicationAspectKernel::$initialized = true;
     }
 }

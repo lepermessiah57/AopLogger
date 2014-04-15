@@ -4,6 +4,7 @@ return array(
     	'Debug' => false,
     	'Cache' => null,
     	'WhiteList' => array(),
-    	'Aspects' => array('DebugAspect')
+    	'Aspects' => array('DebugAspect'),
+        'Disabled' => false
     )
 );
