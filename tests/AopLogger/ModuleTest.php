@@ -63,7 +63,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase {
     	$debug = false;
     	$cache = null;
     	$whitelist = null;
-    	$config = array('AopLogger' => array('Debug'=>$debug, 'Cache' => $cache, 'WhiteList' => $whitelist));
+    	$config = array('AopLogger' => array('Debug'=>$debug, 'Cache' => $cache, 'WhiteList' => $whitelist, 'Disabled'=>false));
 
     	$serviceManager = new ServiceManager();
     	$serviceManager->setService('config', $config);
@@ -77,8 +77,26 @@ class ModuleTest extends \PHPUnit_Framework_TestCase {
     	$this->module->onBootstrap($event);
 
     	Phake::verify($kernel)->init(array('debug'=>$debug, 'cacheDir'=>$cache, 'includePaths'=>$whitelist));
+    }
 
+    public function testOnBootstrapDoNotInitializeTheAopKernelIfDisabledFlagSetToTrue(){
+        $debug = false;
+        $cache = null;
+        $whitelist = null;
+        $config = array('AopLogger' => array('Debug'=>$debug, 'Cache' => $cache, 'WhiteList' => $whitelist, 'Disabled'=>true));
 
+        $serviceManager = new ServiceManager();
+        $serviceManager->setService('config', $config);
+        $event = Phake::mock('Zend\Mvc\MvcEvent');
+        $application = Phake::mock('Zend\Mvc\Application');
+        Phake::when($event)->getApplication()->thenReturn($application);
+        Phake::when($application)->getServiceManager()->thenReturn($serviceManager);
+        $kernel = Phake::mock('AopLogger\Kernel\ApplicationAspectKernel');
+        $serviceManager->setService('ApplicationAspectKernel', $kernel);
+
+        $this->module->onBootstrap($event);
+
+        Phake::verify($kernel, Phake::never())->init(array('debug'=>$debug, 'cacheDir'=>$cache, 'includePaths'=>$whitelist));
     }
 }
  
