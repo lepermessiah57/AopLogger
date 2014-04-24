@@ -36,9 +36,9 @@ class ApplicationAspectKernel extends AspectKernel implements ServiceLocatorAwar
         }
     }
 
-    public function init($config = array()){
+    public function init(array $options = array()){
         if(!ApplicationAspectKernel::$initialized){
-            parent::init($config);
+            parent::init($options);
         }
         ApplicationAspectKernel::$initialized = true;
     }
