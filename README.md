@@ -2,6 +2,7 @@
 
 AopLogger is a module for Zend Framework 2 that allows for logging via Doctrine annotations using the Go! Aop framework
 
+
 ## Installation
 
  0. While we are still testing you will need to add `"repositories": [
