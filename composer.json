@@ -9,7 +9,7 @@
     },
     "require-dev": {
         "phake/phake": "2.0.*",
-        "phpunit/phpunit": "3.7.*",
+        "phpunit/phpunit": "4.0.*",
         "zendframework/zend-servicemanager": ">=2.2.0",
         "zendframework/zend-log" : ">=2.2.0",
         "zendframework/zend-mvc" : ">=2.2.0",
